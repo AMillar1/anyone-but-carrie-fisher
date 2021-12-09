@@ -99,14 +99,14 @@
       'Sandy Cheeks',
     ];
 
-    let first, filteredPeople;
+    let first, tuna;
 
     const pickedList = document.getElementById('picked');
     const selectEl = document.querySelector('select');
 
     document.getElementById('pick').addEventListener('click', function () {
-      if (filteredPeople.length) {
-        const contestant = filteredPeople.splice(Math.floor(Math.random() * filteredPeople.length), 1);
+      if (tuna.length) {
+        const contestant = tuna.splice(Math.floor(Math.random() * tuna.length), 1);
         const li = document.createElement('li');
         li.innerHTML = contestant;
         if (first) {
@@ -126,7 +126,7 @@
     function refreshPeople() {
       // let campus = selectEl.value;
       let campus = 'ALL';
-      filteredPeople = campus === 'ALL' ?
+      tuna = campus === 'ALL' ?
         people.slice() : people.filter(p => p.includes(`(${campus})`));
       pickedList.innerHTML = "<li>Who's First?</li>";
       first = true;
